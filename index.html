@@ -8,9 +8,12 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="logo">CARTER BNW</div>
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo">
+    </div>
     <nav>
       <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
       <a href="#sessions">Sessions</a>
       <a href="#location">Location</a>
       <a href="#details">Details</a>
@@ -38,6 +41,26 @@
       </p>
     </section>
 
+    <!-- GALLERY / CAROUSEL -->
+    <section id="gallery" class="section gallery">
+      <h2>Example Photos</h2>
+
+      <div class="carousel">
+        <div class="carousel-track">
+          <img src="images/sample1.jpg" alt="Example 1">
+          <img src="images/sample2.jpg" alt="Example 2">
+          <img src="images/sample3.jpg" alt="Example 3">
+          <img src="images/sample4.jpg" alt="Example 4">
+        </div>
+
+        <button class="carousel-btn prev">‹</button>
+        <button class="carousel-btn next">›</button>
+
+        <div class="carousel-dots"></div>
+      </div>
+    </section>
+
+    <!-- SESSIONS -->
     <section id="sessions" class="section sessions">
       <h2>Sessions & Pricing</h2>
       <p class="note">All sessions include 45 minutes, online gallery, and fully edited images.</p>
@@ -144,6 +167,7 @@
       </div>
     </section>
 
+    <!-- DETAILS -->
     <section id="details" class="section details">
       <h2>What You Get</h2>
       <ul>
@@ -159,6 +183,7 @@
       </p>
     </section>
 
+    <!-- LOCATION -->
     <section id="location" class="section location">
       <h2>Location – Carlton Gardens</h2>
       <p>Exact meeting point details will be sent after booking confirmation.</p>
@@ -169,20 +194,22 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section class="section contact">
       <h2>Book Your Session</h2>
       <p>
         Click “Request Booking” on your preferred time above. This will open an email draft with the session details.
       </p>
       <p>
-        Alternatively, email me directly at <a href="mailto:youremail@example.com">youremail@example.com</a>
+        Alternatively, email me directly at
+        <a href="mailto:BNW.CARTER@Gmail.com">BNW.CARTER@Gmail.com</a>
         with your preferred session number and any notes.
       </p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> John Doe Photography – Melbourne, Australia</p>
+    <p>© <span id="year"></span> CARTER BNW – Melbourne, Australia</p>
   </footer>
 
   <script src="scripts/main.js"></script>
