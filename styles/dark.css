@@ -336,6 +336,39 @@ body {
 .contact a:hover {
   text-decoration: underline;
 }
+.form-box {
+  background: var(--bg-elevated);
+  padding: 30px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  margin-top: 20px;
+}
+
+.form-box label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.form-box input,
+.form-box textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #444;
+  background: #0d0d0d;
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.form-box textarea {
+  height: 120px;
+  resize: none;
+}
 
 /* Footer */
 
