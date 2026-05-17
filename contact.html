@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirm Booking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/dark.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">
+    <img src="images/logo.png" alt="Logo">
+  </div>
+</header>
+
+<section class="section" style="margin-top:100px; max-width:600px;">
+  <h2>Confirm Your Booking</h2>
+  <p>Please fill in your details below to complete your booking request.</p>
+
+  <form action="https://formsubmit.co/bnw.carter@gmail.com" method="POST" class="form-box">
+
+    <!-- FormSubmit settings -->
+    <input type="hidden" name="_subject" value="New Autumn Mini Session Booking">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="thankyou.html">
+
+    <!-- Session auto-filled -->
+    <label>Selected Session</label>
+    <input type="text" id="session" name="Session" readonly>
+
+    <label>Your Name</label>
+    <input type="text" name="Name" required>
+
+    <label>Email</label>
+    <input type="email" name="Email" required>
+
+    <label>Phone Number</label>
+    <input type="tel" name="Phone" required>
+
+    <label>Notes (optional)</label>
+    <textarea name="Notes" placeholder="Anything you'd like me to know?"></textarea>
+
+    <button type="submit" class="btn-book">Send Booking Request</button>
+  </form>
+</section>
+
+<script>
+  // Read session from URL
+  const params = new URLSearchParams(window.location.search);
+  const session = params.get("session");
+  if (session) {
+    document.getElementById("session").value = session.replace(/%20/g, " ");
+  }
+</script>
+
+</body>
+</html>
