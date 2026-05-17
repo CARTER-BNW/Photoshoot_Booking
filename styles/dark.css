@@ -139,11 +139,13 @@ body {
 }
 
 .carousel-track img {
-  width: 100%;
+  width: auto;
   height: 420px;
-  object-fit: cover;
+  object-fit: contain;
   flex-shrink: 0;
+  background: #000; /* optional: fills empty space */
 }
+
 
 .carousel-btn {
   position: absolute;
