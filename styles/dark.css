@@ -139,12 +139,13 @@ body {
 }
 
 .carousel-track img {
-  width: auto;
-  height: 420px;
+  width: 100%;
+  height: auto;
   object-fit: contain;
   flex-shrink: 0;
-  background: #000; /* optional: fills empty space */
+  background: #0d0d0d;
 }
+
 
 
 .carousel-btn {
