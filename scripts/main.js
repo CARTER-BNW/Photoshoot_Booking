@@ -1,7 +1,12 @@
-// Year in footer
+// ===============================
+// YEAR IN FOOTER
+// ===============================
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Simple “Request Booking” handler – opens email draft
+
+// ===============================
+// BOOKING BUTTON HANDLER
+// ===============================
 const buttons = document.querySelectorAll('.btn-book');
 
 buttons.forEach(btn => {
@@ -25,15 +30,28 @@ Thanks!`
   });
 });
 
-// CAROUSEL
+
+// ===============================
+// CAROUSEL (AUTO‑LOAD 25 IMAGES)
+// ===============================
 const track = document.querySelector('.carousel-track');
-const slides = track ? Array.from(track.children) : [];
+const dotsContainer = document.querySelector('.carousel-dots');
 const nextBtn = document.querySelector('.carousel-btn.next');
 const prevBtn = document.querySelector('.carousel-btn.prev');
-const dotsContainer = document.querySelector('.carousel-dots');
 
-if (track && slides.length > 0 && nextBtn && prevBtn && dotsContainer) {
+if (track && dotsContainer && nextBtn && prevBtn) {
+
+  let slides = [];
   let index = 0;
+
+  // Load sample1.jpg → sample25.jpg
+  for (let i = 1; i <= 25; i++) {
+    const img = document.createElement('img');
+    img.src = `images/sample${i}.jpg`;
+    img.alt = `Example ${i}`;
+    track.appendChild(img);
+    slides.push(img);
+  }
 
   // Create dots
   slides.forEach((_, i) => {
@@ -50,11 +68,13 @@ if (track && slides.length > 0 && nextBtn && prevBtn && dotsContainer) {
     dots[index].classList.add('active');
   }
 
+  // Next button
   nextBtn.addEventListener('click', () => {
     index = (index + 1) % slides.length;
     updateCarousel();
   });
 
+  // Previous button
   prevBtn.addEventListener('click', () => {
     index = (index - 1 + slides.length) % slides.length;
     updateCarousel();
@@ -68,7 +88,7 @@ if (track && slides.length > 0 && nextBtn && prevBtn && dotsContainer) {
     });
   });
 
-  // Auto-slide
+  // Auto-slide every 4.5 seconds
   setInterval(() => {
     index = (index + 1) % slides.length;
     updateCarousel();
