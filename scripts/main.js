@@ -26,7 +26,7 @@ Any notes:
 
 Thanks!`
     );
-    window.location.href = `mailto:youremail@example.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:bnw.carter@gmail.com?subject=${subject}&body=${body}`;
   });
 });
 
