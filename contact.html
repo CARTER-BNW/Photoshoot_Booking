@@ -50,10 +50,13 @@
   // Read session from URL
   const params = new URLSearchParams(window.location.search);
   const session = params.get("session");
+
+  // Fill the session field
   if (session) {
-    document.getElementById("session").value = session.replace(/%20/g, " ");
+    document.getElementById("session").value = decodeURIComponent(session);
   }
 </script>
+
 
 </body>
 </html>
