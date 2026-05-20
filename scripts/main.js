@@ -5,30 +5,9 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 
 // ===============================
-// BOOKING BUTTON HANDLER
+// REMOVE OLD BOOKING HANDLER
+// (Buttons now correctly go to contact.html)
 // ===============================
-const buttons = document.querySelectorAll('.btn-book');
-
-buttons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const session = btn.getAttribute('data-session');
-    const subject = encodeURIComponent(`Autumn Mini Session – ${session}`);
-    const body = encodeURIComponent(
-`Hi John,
-
-I’d like to request a booking for ${session} at Carlton Gardens.
-
-Name:
-Phone:
-Number of people:
-Type of session (couple/family/portrait/other):
-Any notes:
-
-Thanks!`
-    );
-    window.location.href = `mailto:bnw.carter@gmail.com?subject=${subject}&body=${body}`;
-  });
-});
 
 
 // ===============================
@@ -68,19 +47,16 @@ if (track && dotsContainer && nextBtn && prevBtn) {
     dots[index].classList.add('active');
   }
 
-  // Next button
   nextBtn.addEventListener('click', () => {
     index = (index + 1) % slides.length;
     updateCarousel();
   });
 
-  // Previous button
   prevBtn.addEventListener('click', () => {
     index = (index - 1 + slides.length) % slides.length;
     updateCarousel();
   });
 
-  // Dot navigation
   dots.forEach((dot, i) => {
     dot.addEventListener('click', () => {
       index = i;
@@ -88,7 +64,6 @@ if (track && dotsContainer && nextBtn && prevBtn) {
     });
   });
 
-  // Auto-slide every 4.5 seconds
   setInterval(() => {
     index = (index + 1) % slides.length;
     updateCarousel();
